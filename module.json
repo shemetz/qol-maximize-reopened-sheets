@@ -15,6 +15,11 @@
   "changelog": "https://github.com/itamarcu/qol-maximize-reopened-sheets/blob/master/Changelog.md",
   "license": "https://github.com/itamarcu/qol-maximize-reopened-sheets/blob/master/License.md",
   "bugs": "https://github.com/itamarcu/qol-maximize-reopened-sheets/issues",
+  "dependencies": [
+    {
+      "name": "lib-wrapper"
+    }
+  ],
   "authors": [
     {
       "name": "shem",

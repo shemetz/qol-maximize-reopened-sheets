@@ -1,4 +1,24 @@
 const MODULE_ID = 'qol-maximize-reopened-sheets'
+const currentlyOpenedSheetWindows = {}
+// special workaround for all the "new" objects created and immediately rendered
+const SPECIAL_SHEETS = [
+  // in _onSettingsButton()
+  'module-management',
+  'world-config',
+  'support-details',
+  'keybindings',
+  'invitation-links',
+  // others where only 1 instance should exist at any given moment
+  'grid-config',
+  'chat-popout',
+  'combat-tracker-config',
+]
+
+const BAD_SHEETS = [
+  'user-config',
+  'folder-config',
+  'drawing-config',
+]
 
 /**
  * When trying to render a sheet window that is already opened, the code will maximize it and bring
@@ -15,27 +35,54 @@ function renderWrapper (wrapped, ...args) {
   if (game.settings.get(MODULE_ID, 'disable-for-current-user')) {
     return wrapped(...args)
   }
+  const sheetId = this.id
+  if (BAD_SHEETS.some(badSheetId => badSheetId === sheetId)) {
+    // For some reason Foundry doesn't assign separate IDs to some config sheets, so only one window acn be opened.  probably a foundry bug?
+    return wrapped(...args)
+  }
   // If the sheet is already rendered:
   if (this.rendered) {
     this.bringToTop()
     return this.maximize()
   }
-  // Otherwise render the sheet
-  else return wrapped(...args)
+  // Special workaround check for some special settings sheets
+  const existingOpenSheet = currentlyOpenedSheetWindows[sheetId]
+  if (existingOpenSheet) {
+    // If an existing sheet is already rendered (as a different instance), reuse it and ignore the new one
+    if(existingOpenSheet.rendered) {
+      existingOpenSheet.bringToTop()
+      return existingOpenSheet.maximize()
+    } else {
+      // If we got here it means there's old invalid data in currentlyOpenedSheetWindows
+      // so we'll clean it up
+      for (const [id, sheet] of Object.entries(currentlyOpenedSheetWindows)) {
+        if (!sheet.rendered) {
+          delete currentlyOpenedSheetWindows[id]
+        }
+      }
+    }
+  }
+  // Otherwise render the sheet as normal
+  // (keeping it in memory if it needs a workaround later)
+  if (SPECIAL_SHEETS.some(specialSheetId => sheetId.startsWith(specialSheetId))) {
+    currentlyOpenedSheetWindows[sheetId] = this
+  }
+  return wrapped(...args)
 }
 
 Hooks.once('setup', function () {
+  if (typeof(libWrapper) === 'undefined' || !libWrapper) return ui.notifications.error('LibWrapper should be installed')
   libWrapper.register(
     MODULE_ID,
     'DocumentSheet.prototype.render',
     renderWrapper,
-    'MIXED',
+    libWrapper.MIXED,
   )
   libWrapper.register(
     MODULE_ID,
     'Application.prototype.render',
     renderWrapper,
-    'MIXED',
+    libWrapper.MIXED,
   )
 })
 
