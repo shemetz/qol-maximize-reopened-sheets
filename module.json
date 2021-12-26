@@ -2,7 +2,7 @@
   "name": "qol-maximize-reopened-sheets",
   "title": "QoL - Maximize Reopened Sheets",
   "description": "When trying to render a sheet window that is already opened, maximize it and bring it in front of other sheets (instead of doing nothing).",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "minimumCoreVersion": "0.8.9",
   "compatibleCoreVersion": "9",
   "esmodules": [
