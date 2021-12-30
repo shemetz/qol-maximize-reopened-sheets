@@ -7,7 +7,8 @@
 When trying to render a sheet window that is already opened, maximize it and bring it in front of other sheets (instead
 of doing nothing).
 
-This applies to all types of "sheets" (item, actor, journal, token configuration, etc).
+This applies to most types of "sheets" (item, actor, journal, token configuration, etc).  Due to some core bugs it
+ doesn't work with drawing config, folder config, or user config.
 
 ![](metadata/Recording_1.webp)
 
