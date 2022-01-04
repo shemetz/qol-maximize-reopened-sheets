@@ -3,6 +3,7 @@
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/itamarcu/qol-maximize-reopened-sheets?style=for-the-badge) 
 ![GitHub Releases](https://img.shields.io/github/downloads/itamarcu/qol-maximize-reopened-sheets/latest/total?style=for-the-badge) 
 ![GitHub All Releases](https://img.shields.io/github/downloads/itamarcu/qol-maximize-reopened-sheets/total?style=for-the-badge&label=Downloads+total)  
+![Latest Supported Foundry Version](https://img.shields.io/endpoint?url=https://foundryshields.com/version?url=https://github.com/itamarcu/qol-maximize-reopened-sheets/raw/master/module.json)
 
 When trying to render a sheet window that is already opened, maximize it and bring it in front of other sheets (instead
 of doing nothing).
