@@ -1,10 +1,11 @@
 {
   "name": "qol-maximize-reopened-sheets",
+  "id": "qol-maximize-reopened-sheets",
   "title": "QoL - Maximize Reopened Sheets",
   "description": "When trying to render a sheet window that is already opened, maximize it and bring it in front of other sheets (instead of doing nothing).",
-  "version": "1.0.3",
-  "minimumCoreVersion": "0.8.9",
-  "compatibleCoreVersion": "9",
+  "version": "1.0.4",
+  "minimumCoreVersion": "9",
+  "compatibleCoreVersion": "10",
   "compatibility": {
     "minimum": "9",
     "verified": "10"
@@ -12,13 +13,13 @@
   "esmodules": [
     "scripts/qol-maximize-reopened-sheets.js"
   ],
-  "url": "https://github.com/itamarcu/qol-maximize-reopened-sheets",
-  "manifest": "https://github.com/itamarcu/qol-maximize-reopened-sheets/raw/master/module.json",
-  "download": "https://github.com/itamarcu/qol-maximize-reopened-sheets/archive/master.zip",
-  "readme": "https://github.com/itamarcu/qol-maximize-reopened-sheets/blob/master/Readme.md",
-  "changelog": "https://github.com/itamarcu/qol-maximize-reopened-sheets/blob/master/Changelog.md",
-  "license": "https://github.com/itamarcu/qol-maximize-reopened-sheets/blob/master/License.md",
-  "bugs": "https://github.com/itamarcu/qol-maximize-reopened-sheets/issues",
+  "url": "https://github.com/shemetz/qol-maximize-reopened-sheets",
+  "manifest": "https://github.com/shemetz/qol-maximize-reopened-sheets/raw/master/module.json",
+  "download": "https://github.com/shemetz/qol-maximize-reopened-sheets/archive/master.zip",
+  "readme": "https://github.com/shemetz/qol-maximize-reopened-sheets/blob/master/Readme.md",
+  "changelog": "https://github.com/shemetz/qol-maximize-reopened-sheets/blob/master/Changelog.md",
+  "license": "https://github.com/shemetz/qol-maximize-reopened-sheets/blob/master/License.md",
+  "bugs": "https://github.com/shemetz/qol-maximize-reopened-sheets/issues",
   "dependencies": [
     {
       "name": "lib-wrapper"
@@ -39,8 +40,8 @@
   },
   "authors": [
     {
-      "name": "shem",
-      "discord": "shem#0226",
+      "name": "shemetz",
+      "discord": "shemetz#0226",
       "email": "itamarcu+foundry@gmail.com",
       "reddit": "u/Shemetz"
     }
