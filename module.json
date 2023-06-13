@@ -1,14 +1,11 @@
 {
-  "name": "qol-maximize-reopened-sheets",
   "id": "qol-maximize-reopened-sheets",
-  "title": "QoL - Maximize Reopened Sheets",
-  "description": "When trying to render a sheet window that is already opened, maximize it and bring it in front of other sheets (instead of doing nothing).",
-  "version": "1.0.4",
-  "minimumCoreVersion": "9",
-  "compatibleCoreVersion": "10",
+  "title": "(DEPRECATED) QoL - Maximize Reopened Sheets",
+  "description": "For older Foundry versions:  When trying to render a sheet window that is already opened, maximize it and bring it in front of other sheets (instead of doing nothing).",
+  "version": "999.0.0",
   "compatibility": {
-    "minimum": "9",
-    "verified": "10"
+    "minimum": "11",
+    "verified": "11"
   },
   "esmodules": [
     "scripts/qol-maximize-reopened-sheets.js"
@@ -20,28 +17,11 @@
   "changelog": "https://github.com/shemetz/qol-maximize-reopened-sheets/blob/master/Changelog.md",
   "license": "https://github.com/shemetz/qol-maximize-reopened-sheets/blob/master/License.md",
   "bugs": "https://github.com/shemetz/qol-maximize-reopened-sheets/issues",
-  "dependencies": [
-    {
-      "name": "lib-wrapper"
-    }
-  ],
-  "relationships": {
-    "requires": [
-      {
-        "id": "lib-wrapper",
-        "type": "module",
-        "manifest": "https://github.com/ruipin/fvtt-lib-wrapper/releases/latest/download/module.json",
-        "compatibility": {
-          "minimum": "1.12.7.0",
-          "compatible": "1.12.7.0"
-        }
-      }
-    ]
-  },
+  "relationships": {},
   "authors": [
     {
       "name": "shemetz",
-      "discord": "shemetz#0226",
+      "discord": "shemetz",
       "email": "itamarcu+foundry@gmail.com",
       "reddit": "u/Shemetz"
     }
