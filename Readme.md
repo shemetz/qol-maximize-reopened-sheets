@@ -1,3 +1,9 @@
+# Update - this module is deprecated, as core foundry now includes this feature! \o/
+
+
+---
+
+
 # [QoL - Maximize Reopened Sheets](https://foundryvtt.com/packages/qol-maximize-reopened-sheets/)
 
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/shemetz/qol-maximize-reopened-sheets?style=for-the-badge) 
